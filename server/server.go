@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"log"
@@ -18,7 +18,7 @@ func NewServer(port int, host string) *Server {
 	}
 }
 
-func (s Server) start() (int, error) {
+func (s Server) Start() (int, error) {
 	fd, err := syscall.Socket(syscall.AF_INET, syscall.SOCK_STREAM, 0)
 	if err != nil {
 		log.Fatal("Error starting socket server:", err) 

@@ -1,4 +1,4 @@
-package main
+package handler
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ func NewHandler() *Handler {
 	return &Handler{}
 }
 
-func (h Handler) handle(fd int) {
+func (h Handler) Handle(fd int) {
 	message := "HTTP/1.1 200 OK\r\n" +
 		"Content-Type: text/html; charset=utf-8\r\n" +
 		"Content-Length: 25\r\n" +
